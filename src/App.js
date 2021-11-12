@@ -10,8 +10,12 @@ import Collection from './Pages/Collection/Collection';
 import Login from './Pages/Login/Login'
 import Registration from './Pages/Registration/Registration';
 import AuthProvider from './context/AuthContext/AuthProvider';
-import Dashboard from './Pages/Dashboard/Dashboard';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
+import Payment from './Pages/Dashboard/Payment/Payment';
+import AddReview from './Pages/Dashboard/AddReview/AddReview';
+import ProductDetails from './Pages/HomePage/ProductDetails/ProductDetails';
 
 
 function App() {
@@ -19,7 +23,6 @@ function App() {
     <div className="App">
       <AuthProvider>
       <BrowserRouter>
-      <Header/>
       <Switch>
         <Route exact path="/">
          <Home></Home>
@@ -30,6 +33,9 @@ function App() {
         <Route  path="/products">
          <Products></Products>
         </Route>
+        <PrivateRoute  path="/productDetails/:productId">
+         <ProductDetails></ProductDetails>
+        </PrivateRoute>
         <Route  path="/reviews">
          <Reviews></Reviews>
         </Route>

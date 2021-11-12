@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import SIngleProduct from '../SingleProduct/SIngleProduct';
+
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { Container } from '@mui/material';
+import SingleProduct from '../SingleProduct/SingleProduct';
 
 
 const Products = () => {
@@ -18,24 +19,20 @@ const Products = () => {
 
     return (
         <div>
-            <h3>Display Products</h3>
+            <h3 className="text-center mt-5 mb-5">Display Products</h3>
+            <div className="container">
+            <div className="row row-cols-1 row-cols-md-3 g-4">
             {
-               <Container>
-                   <Box sx={{ flexGrow: 1 }}>
-                    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                     {
-                        products.slice(0,6).map(product => <SIngleProduct
-                        key={product.id}
+              
+                 products.slice(0,6).map(product => <SingleProduct
+                     key={product._id}
                         product={product}
                         
-                        ></SIngleProduct>
-                        
-                        )}
-                       
-                    </Grid>
-                    </Box>
-               </Container>
-            }
+                        ></SingleProduct>
+                 )
+                 }
+            </div>
+            </div>
         </div>
     );
 };

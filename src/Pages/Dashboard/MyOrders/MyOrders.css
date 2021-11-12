@@ -1,0 +1,15 @@
+.button{
+    width: 150px;
+    background-color: blueviolet;
+    color: white;
+    height: 50px;
+}
+.button:hover{
+    color: black;
+    background-color: white;
+    border: 1px solid blueviolet;
+}
+.orders-display{
+    background-color: lavender;
+    
+}

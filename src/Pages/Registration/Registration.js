@@ -3,6 +3,7 @@ import { Alert, Spinner } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { NavLink , useHistory} from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import Header from '../Shared/Header/Header';
 const Registration = () => {
 
     const {registerUser, isLoading, authError, user}  = useAuth();
@@ -19,6 +20,8 @@ const Registration = () => {
 
 
     return (
+        <div>
+        <Header/>
         <div className="container text-center mt-5">
             <h1>Registration</h1>
            { !isLoading && <form onSubmit={handleSubmit(onSubmit)}>
@@ -29,10 +32,10 @@ const Registration = () => {
             <input placeholder="Email" {...register("email", { required: true })} /> <br/>
             {errors.email && <span>This field is required</span>} <br/>
             {/* include validation with required or other standard HTML validation rules */}
-            <input placeholder="Password" {...register("password", { required: true })} /> <br/>
+            <input placeholder="Password" type="password" {...register("password", { required: true })} /> <br/>
             {/* errors will return when field validation fails  */}
             {errors.password && <span>Password should be at least 6 characters</span>}<br/>
-            <input placeholder="Retype Password" {...register("passwordConfirm", { required: true })} /><br/>
+            <input placeholder="Retype Password" type="password" {...register("passwordConfirm", { required: true })} /><br/>
             {/* errors will return when field validation fails  */}
             {errors.passwordConfirm && <span>This field is required</span>}<br/>
             
@@ -52,6 +55,7 @@ const Registration = () => {
             <NavLink to='/login'>
                 Login
             </NavLink>
+        </div>
         </div>
     );
 };

@@ -1,0 +1,32 @@
+.product-card img{
+  height: 500px;
+}
+.product-card{
+    position: relative;
+}
+
+.product-details{
+    position: absolute;
+    text-align: center;
+    left: 15%;
+    bottom: 0;
+    text-align: center;
+}
+.product-info{
+    transition: 1.5s;
+}
+.btn-cart{
+    display: none;
+    font-size: 25px;
+    transition: 1.5s;
+    
+}
+.product-card:hover .btn-cart{
+    display: block;
+   
+    
+}
+.product-card:hover .product-info{
+    display: none;
+   
+}

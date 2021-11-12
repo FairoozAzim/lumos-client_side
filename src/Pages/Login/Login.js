@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { Alert, Spinner } from 'react-bootstrap';
+import Header from '../Shared/Header/Header';
 const Login = () => {
     
     const{login, isLoading, authError, user} = useAuth();
@@ -18,6 +19,8 @@ const Login = () => {
     }
 
     return (
+        <div>
+            <Header/>
         <div className='container login mx-auto text-center'>
             <h1>Login</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -26,7 +29,7 @@ const Login = () => {
             {errors.email && <span>This field is required</span>}
             
             {/* include validation with required or other standard HTML validation rules */}
-            <input placeholder="Password" {...register("password", { required: true })} /> <br/>
+            <input placeholder="Password" type="password" {...register("password", { required: true })} /> <br/>
             {/* errors will return when field validation fails  */}
             {errors.password && <span>This field is required</span>}
             
@@ -45,6 +48,7 @@ const Login = () => {
             <NavLink to='/registration'>
                 Register
             </NavLink>
+        </div>
         </div>
     );
 };
