@@ -7,13 +7,13 @@ const ManageProducts = () => {
     console.log(products);
     
     useEffect(() => {
-        fetch('http://localhost:5000/lights')
+        fetch('https://radiant-citadel-36252.herokuapp.com/lights')
         .then(res => res.json())
         .then(data => setProducts(data));
         },[])
 
 const handleDelete = (id) =>{
-    fetch(`http://localhost:5000/lights/${id}`, {
+    fetch(`https://radiant-citadel-36252.herokuapp.com/lights/${id}`, {
         method: 'DELETE'
     })
     .then(res => res.json())

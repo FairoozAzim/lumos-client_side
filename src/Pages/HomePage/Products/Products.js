@@ -10,7 +10,7 @@ import SingleProduct from '../SingleProduct/SingleProduct';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/lights')
+        fetch('https://radiant-citadel-36252.herokuapp.com/lights')
         .then(res => res.json())
         .then(data => setProducts(data));
     },[])

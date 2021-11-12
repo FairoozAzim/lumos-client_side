@@ -15,7 +15,7 @@ const AddReview = () => {
     const onSubmit = data => {
         const {name, review} = data;
         const reviewData = {name, review, rating}
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://radiant-citadel-36252.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

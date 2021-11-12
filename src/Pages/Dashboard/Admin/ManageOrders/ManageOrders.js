@@ -4,7 +4,7 @@ const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
     const [singleOrder, setSingleOrder] = useState({});
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://radiant-citadel-36252.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setOrders(data));
     },[singleOrder])
@@ -15,7 +15,7 @@ const ManageOrders = () => {
         const updateOrder= {name: name, email:email, productName: productName, address: address, payment: payment, status: 'Shipped'}
         setSingleOrder(updateOrder);
 
-        fetch(`http://localhost:5000/orders/${order._id}`, {
+        fetch(`https://radiant-citadel-36252.herokuapp.com/orders/${order._id}`, {
           method: 'PUT',
           headers: {
               'content-type': 'application/json'

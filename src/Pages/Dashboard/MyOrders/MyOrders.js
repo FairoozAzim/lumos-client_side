@@ -10,13 +10,13 @@ const MyOrders = () => {
     const length = myOrders.length;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user.email}`)
+        fetch(`https://radiant-citadel-36252.herokuapp.com/orders?email=${user.email}`)
         .then(res => res.json())
         .then(data => setMyOrders(data));
     },[])
 
     const handleDelete = (id) =>{
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://radiant-citadel-36252.herokuapp.com/orders/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

@@ -18,7 +18,7 @@ const ProductDetails = () => {
 
     
     useEffect(() => {
-        fetch(`http://localhost:5000/lights/${productId}`)
+        fetch(`https://radiant-citadel-36252.herokuapp.com/lights/${productId}`)
         .then(res => res.json())
         .then(data => {
             setProductDetail(data)
@@ -34,7 +34,7 @@ const ProductDetails = () => {
     const onSubmit = data => {
         const order = {...data, status,image, price};
         console.log(order);
-        fetch('http://localhost:5000/orders', {
+        fetch('https://radiant-citadel-36252.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

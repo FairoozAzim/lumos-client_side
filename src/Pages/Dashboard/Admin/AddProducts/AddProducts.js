@@ -9,7 +9,7 @@ const AddProducts = () => {
     const [success, setSuccess] = React.useState(false);
     const onSubmit = data => {
         console.log(data);
-        fetch('http://localhost:5000/lights', {
+        fetch('https://radiant-citadel-36252.herokuapp.com/lights', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
