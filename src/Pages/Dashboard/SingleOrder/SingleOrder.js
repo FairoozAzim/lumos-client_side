@@ -5,11 +5,11 @@ const SingleOrder = (props) => {
     const {image, email, productName, address, payment, status,price} = props.order;
     return (
         <div>
-            <div className='container d-flex justify-content-around align-items-center mt-5 '>
-            <div className='d-flex align-items-center'>
+            <div className='container d-flex flex-column flex-lg-row justify-content-around align-items-center mt-5 myorders'>
+            <div className='d-flex flex-column flex-lg-row align-items-center '>
             <img className="rounded me-4" src={image} alt='' height='160px'></img>
              <div>
-             <h5>{productName}</h5>
+             <h5 className='fw-bold'>{productName}</h5>
              <p>${price}</p>
              </div>
             </div>

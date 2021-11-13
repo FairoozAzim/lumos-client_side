@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SingleProduct from '../HomePage/SingleProduct/SingleProduct';
+import Footer from '../Shared/Footer/Footer';
 import Header from '../Shared/Header/Header';
 
 
@@ -17,9 +18,10 @@ const Collection = () => {
     return (
         <div>
             <Header/>
-            <h3>All COllection</h3>
+            <h1 className='text-center fw-bold mt-5 mb-2'>All Collection</h1>
+            <p className='text-center mb-5'>Browse from our collections!</p>
             <div className="container">
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row row-cols-1 row-cols-md-2 g-4">
             {
               
                  products.map(product => <SingleProduct
@@ -31,6 +33,7 @@ const Collection = () => {
                  }
             </div>
             </div>
+            <Footer/>
         </div>
     );
 };

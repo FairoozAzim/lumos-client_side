@@ -28,13 +28,13 @@ const MakeAdmin = () => {
 
     return (
         <div className="text-center container">
-            <h1>Create a New Admin</h1>
+            <h1 className='fw-bold'>Create a New Admin</h1>
              <form onSubmit={handleSubmit(onSubmit)}>
             {/* register your input into the hook by invoking the "register" function */}
-            <input placeholder="Email" {...register("email", { required: true })} /> <br/>
+            <input className='form-control w-50 mx-auto mt-5' placeholder="Email" {...register("email", { required: true })} /> <br/>
             {errors.name && <span>This field is required</span>} <br/>
             {/* include validation with required or other standard HTML validation rules */}  
-            <button type="submit" className="btn btn-primary">Make Admin</button> <br/>
+            <button type="submit" className="btn button">Make Admin</button> <br/>
             </form> 
             <br/>
             {success && <Alert variant="success">

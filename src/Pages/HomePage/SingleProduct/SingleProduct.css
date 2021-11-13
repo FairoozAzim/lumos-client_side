@@ -3,6 +3,7 @@
 }
 .product-card{
     position: relative;
+    border: 1px solid rgb(180, 178, 178);
 }
 
 .product-details{
@@ -13,20 +14,25 @@
     text-align: center;
 }
 .product-info{
-    transition: 1.5s;
+    transition: all 1.5s;
 }
 .btn-cart{
     display: none;
     font-size: 25px;
-    transition: 1.5s;
+    text-decoration: none;
+    transition: all 2s;
     
 }
 .product-card:hover .btn-cart{
-    display: block;
+    display: block;  
    
-    
 }
 .product-card:hover .product-info{
     display: none;
    
+}
+.price{
+    color: rgb(48, 47, 47);
+    font-weight: 600;
+    font-size: 20px;
 }

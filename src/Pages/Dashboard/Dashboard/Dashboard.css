@@ -2,7 +2,7 @@
     font-size: 22px;
     text-decoration: none;
     color: whitesmoke;
-    margin-bottom: 20px !important;
+    margin-bottom: 25px !important;
 }
 
 .side-link:hover{
@@ -12,10 +12,4 @@
 .line{
    border: 2px solid gray;
    width: 220px;
-}
-.navigation{
-    list-style: none;
-}
-.navigation li{
-    margin-bottom: 10px;
 }

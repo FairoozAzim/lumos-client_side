@@ -1,8 +1,14 @@
 .link{
     text-decoration: none;
     color: white;
+    font-size: 25px;
 
 }
 .link:hover{
-    color: lightgray;
+    color: darkgray;
+}
+
+.brand{
+    color: white;
+    letter-spacing: 0.6em;
 }

@@ -1,15 +1,16 @@
 .button{
     width: 150px;
-    background-color: blueviolet;
+    background-color:rgb(46, 46, 46);
     color: white;
     height: 50px;
+    text-transform: uppercase;
 }
 .button:hover{
     color: black;
     background-color: white;
-    border: 1px solid blueviolet;
+    border: 1px solid black;
 }
 .orders-display{
-    background-color: lavender;
+    background-color: lightgray;
     
 }

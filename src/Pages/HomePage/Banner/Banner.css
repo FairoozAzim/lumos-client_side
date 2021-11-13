@@ -1,5 +1,11 @@
-.banner img{
-    width: 100vw;
-    height: 80vh;
-   
+.image-container{
+    overflow: hidden;
+
+}
+.img{
+    cursor: pointer;
+    transition: all 2s;
+}
+.img:hover{
+    transform: scale(1.2);
 }

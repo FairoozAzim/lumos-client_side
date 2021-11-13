@@ -8,10 +8,10 @@ const Payment = () => {
     const{user} = useAuth();
     return (
         <div className="container-fluid">
-        <h1>Checkout</h1>
+        <h1 className='fw-bold text-center mb-5 mt-5'>Checkout</h1>
         <div className="row">
-         <div className="col-6">
-         <h3>Personal Details</h3>
+         <div className="col-12 col-lg-6">
+         <h3 className='fw-bold'>Personal Details</h3>
          <hr className="line w-75"></hr>
          <form>
          <input className="form-control w-50" defaultValue={user.displayName}></input> <br/>
@@ -23,7 +23,7 @@ const Payment = () => {
          <input className="form-control w-50" placeholder='Postcode/ ZIP'></input><br/>
          </form>
          <br/>
-         <h3>Payment Method</h3>
+         <h3 className="fw-bold">Payment Method</h3>
          <hr className="line w-75"></hr>
          <div className="form-check form-check-inline">
             <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"/>
@@ -38,9 +38,9 @@ const Payment = () => {
             <label className="form-check-label" for="inlineRadio3">Bank Transfer</label>
         </div>
          </div>
-         <div className="col-6">
+         <div className="col-12 col-lg-6 mt-5">
          <div className="d-flex"> 
-         <h3 className="me-5">Credit Card Details</h3>
+         <h3 className="me-5 fw-bold">Credit Card Details</h3>
          <img src={visa} alt='' height="30px" className="ms-5" ></img>
          </div>
          <hr className="line w-75"></hr>

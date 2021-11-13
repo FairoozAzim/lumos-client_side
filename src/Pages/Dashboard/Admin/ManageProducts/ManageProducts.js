@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
-
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
@@ -29,7 +28,8 @@ const handleDelete = (id) =>{
     return (
         <div className="container mx-auto">
             <h1 className="text-center mt-5 mb-5">Manage Products</h1>
-            <table className="table">
+        <div className='table-responsive'>
+        <table className="table">
                 <thead>
                 <tr>
                     <th scope="col">Product Name</th>
@@ -46,7 +46,8 @@ const handleDelete = (id) =>{
                                 <td>{product.name}</td>
                                 <td><img src={product.image} alt='' height="80px" width="100px"></img></td>
                                 <td>${product.price}</td>
-                                <td><button className='btn btn-danger' onClick={() => handleDelete(product._id)}>Delete Product</button></td>
+                                <td><button className='btn button-action' onClick={() => handleDelete(product._id)}>
+                                  <DeleteOutlineIcon/>  Delete Product</button></td>
                                
                                
                             </tr>
@@ -56,6 +57,7 @@ const handleDelete = (id) =>{
             }
           </tbody>
        </table>  
+        </div>
             
         </div>
     );

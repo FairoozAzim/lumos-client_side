@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { Alert, Spinner } from 'react-bootstrap';
+import {  Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import Header from '../../Shared/Header/Header';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { NavLink } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProductDetails = () => {
     const {productId} = useParams();
     const [productDetail, setProductDetail] = useState({});
     const [loading, setLoading] = useState(true);
-    const [success, setSuccess] = useState(false);
     //console.log(loading);
     const { register, handleSubmit,reset, formState: { errors } } = useForm();
     const {user} = useAuth();
+
+    const notify = () => toast.success("Added to cart");
 
     
     useEffect(() => {
@@ -33,7 +36,7 @@ const ProductDetails = () => {
     const status = 'pending';
     const onSubmit = data => {
         const order = {...data, status,image, price};
-        console.log(order);
+        //console.log(order);
         fetch('https://radiant-citadel-36252.herokuapp.com/orders', {
             method: 'POST',
             headers: {
@@ -44,9 +47,9 @@ const ProductDetails = () => {
         })
         .then(res => res.json())
         .then(data => {
-         console.log(data)
+         //console.log(data)
          if(data.acknowledged){
-             setSuccess(true);
+             notify();
          }
         
           reset();
@@ -68,23 +71,25 @@ const ProductDetails = () => {
                 :
                 <div className="container mt-5 mx-auto p-5">
                 <div className='row container'>
-                    <div className='col-6'>
-                     <img src={image} alt='lamp'height="380px"></img>
+                    <div className='col mb-5 mx-auto'>
+                     <img src={image} alt='lamp'height="300px"></img>
                     </div>
-                    <div className='col-4'>
-                       <h3>{name}</h3>
+                    <div className='col'>
+                       <h1 className='fw-bold mb-5'>{name}</h1>
                        <p>{description}</p>
-                        <h5>${price}</h5>
-                        <h5>Order Details</h5>
+                        <h3 className="fw-bold mt-5">${price}</h3>
+                    </div>
+                    <div className=''>
+                    <h5 className='header mb-3'>Order Details</h5>
                         <form onSubmit={handleSubmit(onSubmit)}>
                         
-                        <input readOnly defaultValue = {user?.displayName} {...register("name")} /> 
+                        <input className='form-control p-3' readOnly defaultValue = {user?.displayName} {...register("name")} /> <br/>
                        
-                        <input readOnly defaultValue = {user?.email} {...register("email")} /> 
+                        <input className='form-control p-3' readOnly defaultValue = {user?.email} {...register("email")} /> <br/>
                         
-                        <input readOnly defaultValue={name} {...register("productName")} /> <br/>
-                        <input placeholder="Address" {...register("address", {required : true})} /> <br/>
-                        <select className='reg' {...register("payment", {required: true})}>
+                        <input className='form-control p-3' readOnly defaultValue={name} {...register("productName")} /> <br/>
+                        <input className='form-control p-3' placeholder="Address" {...register("address", {required : true})} /> <br/>
+                        <select className='form-select p-3' {...register("payment", {required: true})}>
                         <option value="" disabled selected hidden>Payment Option</option>
                         <option value="bank">Bank Transfer</option>
                         <option value="card">Card Payment</option>
@@ -92,15 +97,21 @@ const ProductDetails = () => {
                         
                         </select> <br/> <br/>
                         
-                        <button type='submit' className="btn btn-primary mt-5">Add to Cart</ button>
+                        <button type='submit' className="btn button mt-5">Add to Cart</ button>
                         </form> 
+                        <ToastContainer position="bottom-center"
+                            autoClose={3000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover/>
 
-                        {success && <Alert variant="success">
-                          Added to cart</Alert>}
                     </div>
                      <NavLink to='/'>
-                     <button className="btn"><ArrowBackIcon/> Back to Home</button>
-
+                     <button className="btn mt-5 fs-4 "><ArrowBackIcon/> Back to Home</button>
                          </NavLink>   
                 </div>
                </div>

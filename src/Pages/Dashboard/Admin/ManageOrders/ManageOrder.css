@@ -1,0 +1,10 @@
+.button-action{
+    border: 1px solid rgb(53, 52, 52);
+    font-weight: bold;
+
+}
+.button-action:hover{
+    background-color: rgb(53, 52, 52);
+    border: none;
+    color: white;
+}

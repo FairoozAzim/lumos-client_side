@@ -3,3 +3,12 @@
     font-size: 20px;
     
 }
+.myorders p{
+  font-size: 22px;
+  
+}
+.myorders{
+    padding: 10px;
+    border-bottom: 1px solid rgb(167, 165, 165);
+   
+}

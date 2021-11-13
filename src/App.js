@@ -1,21 +1,18 @@
 import './App.css';
 import Home from './Pages/HomePage/Home/Home';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './Pages/Shared/Header/Header';
 import Products from './Pages/HomePage/Products/Products';
 import Reviews from './Pages/HomePage/Reviews/Reviews';
 import Blogs from './Pages/HomePage/Blogs/Blogs';
-import Footer from './Pages/Shared/Footer/Footer';
 import Collection from './Pages/Collection/Collection';
 import Login from './Pages/Login/Login'
 import Registration from './Pages/Registration/Registration';
 import AuthProvider from './context/AuthContext/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
-import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
-import Payment from './Pages/Dashboard/Payment/Payment';
-import AddReview from './Pages/Dashboard/AddReview/AddReview';
 import ProductDetails from './Pages/HomePage/ProductDetails/ProductDetails';
+import NotFound from './Pages/NotFound/NotFound';
+
 
 
 function App() {
@@ -54,8 +51,12 @@ function App() {
         <PrivateRoute path="/dashboard">
         <Dashboard></Dashboard>
         </PrivateRoute>
+       
+        <Route to='*'>
+          <NotFound></NotFound>
+        </Route>
       </Switch>
-      <Footer></Footer>
+    
       </BrowserRouter>
       </AuthProvider>
      

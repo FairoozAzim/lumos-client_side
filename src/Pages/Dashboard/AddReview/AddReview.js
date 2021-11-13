@@ -55,8 +55,8 @@ const AddReview = () => {
             {errors.email && <span>This field is required</span>} <br/>
             {/* include validation with required or other standard HTML validation rules */}
             <input type="submit" className="button"/> <br/>
-            {success && <Alert variant="success">
-                   Admin created successfully!</Alert>}
+            {success && <Alert variant="success" className='fs-5 mx-auto'>
+                   Thanks for your valuable opinion!</Alert>}
             </form> 
             
         </div>
