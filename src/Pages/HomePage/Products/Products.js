@@ -34,12 +34,13 @@ const Products = () => {
                  )
                  }
                 
-                <button className="btn button mx-auto mb-5 mt-5 w-25">
-                <NavLink to='/collection' activeStyle={{
-                 fontWeight: "bold",
-                  color: "white" }} className='text-decoration-none text-white'> View More
-                </NavLink>
+               
+               
+                <button className="btn button text-decoration-none mx-auto mb-5 mt-5 w-25">View More
+                <NavLink to='/collection'/> 
                 </button>
+               
+               
             </div>
             </div>
         </div>
